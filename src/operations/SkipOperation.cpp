@@ -24,5 +24,5 @@ QStringList::size_type stamp::SkipOperation::minimumArgumentCount() const
 
 QString stamp::SkipOperation::usageString() const
 {
-    return "Example: skip";
+    return "skip";
 }

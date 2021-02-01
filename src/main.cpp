@@ -1,7 +1,7 @@
 
 // qt
-#include "operations/OperationBindingSingletone.h"
-#include "operations/VariableBindingSingletone.h"
+#include "state/OperationBindingSingletone.h"
+#include "state/VariableBindingSingletone.h"
 #include <QCoreApplication>
 #include <QDate>
 #include <QDir>

@@ -1,8 +1,8 @@
 // self
 #include "CreateProjectOperation.h"
-#include "OperationBindingSingletone.h"
-#include "VariableBindingSingletone.h"
 #include "io.h"
+#include "state/OperationBindingSingletone.h"
+#include "state/VariableBindingSingletone.h"
 
 // qt
 #include <QDate>
@@ -74,7 +74,7 @@ QStringList::size_type stamp::CreateProjectOperation::minimumArgumentCount() con
 QString stamp::CreateProjectOperation::usageString() const
 {
     // TODO: show all available create operations by scanning project folder
-    return "Example: stamp create [module, ...] MyCustomName";
+    return "create [module, ...] MyCustomName";
 }
 
 void stamp::CreateProjectOperation::processNamedArguments(const stamp::ArgumentPairList& namedArguments)

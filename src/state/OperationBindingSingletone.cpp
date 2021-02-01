@@ -2,13 +2,13 @@
 #include "OperationBindingSingletone.h"
 
 // operations
-#include "CreateProjectOperation.h"
-#include "EnvOperation.h"
-#include "ExtractOperation.h"
-#include "InitProjectOperation.h"
-#include "MakedirOperation.h"
-#include "SkipOperation.h"
-#include "SystemOperation.h"
+#include "operations/CreateProjectOperation.h"
+#include "operations/EnvOperation.h"
+#include "operations/ExtractOperation.h"
+#include "operations/InitProjectOperation.h"
+#include "operations/MakedirOperation.h"
+#include "operations/SkipOperation.h"
+#include "operations/SystemOperation.h"
 
 #include <QTextStream>
 

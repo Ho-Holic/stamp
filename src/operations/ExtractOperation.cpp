@@ -4,7 +4,7 @@
 
 // chunck of incorrect arch. Actions must run simple tasks and not inserting bindings.
 // Find a way to workaround this
-#include "VariableBindingSingletone.h"
+#include "state/VariableBindingSingletone.h"
 
 stamp::ExtractOperation::ExtractOperation()
     : Operation()
@@ -33,5 +33,5 @@ QStringList::size_type stamp::ExtractOperation::minimumArgumentCount() const
 
 QString stamp::ExtractOperation::usageString() const
 {
-    return "Example: extract %{stampTemplatesPath}/resource/file/path/file.txt some/destination/dir";
+    return "extract %{stampTemplatesPath}/resource/file/path/file.txt some/destination/dir";
 }

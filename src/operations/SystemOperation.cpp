@@ -30,5 +30,5 @@ QStringList::size_type stamp::SystemOperation::minimumArgumentCount() const
 
 QString stamp::SystemOperation::usageString() const
 {
-    return "Example: system [svn add ./]";
+    return "system [svn add ./]";
 }

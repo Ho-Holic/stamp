@@ -5,7 +5,7 @@
 #include <QMap>
 
 // self
-#include "Operation.h"
+#include "operations/Operation.h"
 
 namespace stamp {
 

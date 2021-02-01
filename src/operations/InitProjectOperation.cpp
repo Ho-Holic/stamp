@@ -19,5 +19,5 @@ QStringList::size_type stamp::InitProjectOperation::minimumArgumentCount() const
 
 QString stamp::InitProjectOperation::usageString() const
 {
-    return "Example: init ./some/path/";
+    return "init ./some/path/";
 }

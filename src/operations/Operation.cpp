@@ -91,6 +91,6 @@ void stamp::Operation::tryExecute(const QStringList& arguments)
         execute(arguments);
     } else {
         out << QString("Incorrect argument count.") << Qt::endl
-            << usageString() << Qt::endl;
+            << "Example: stamp " << usageString() << Qt::endl;
     }
 }

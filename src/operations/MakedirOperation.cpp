@@ -27,5 +27,5 @@ QStringList::size_type stamp::MakedirOperation::minimumArgumentCount() const
 
 QString stamp::MakedirOperation::usageString() const
 {
-    return "Example: makedir some/new/dir";
+    return "makedir some/new/dir";
 }

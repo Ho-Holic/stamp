@@ -3,7 +3,7 @@
 
 // self
 #include "Operation.h"
-#include "VariableBindingSingletone.h"
+#include "state/VariableBindingSingletone.h"
 
 // qt
 #include <QMap>

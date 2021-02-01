@@ -1,5 +1,5 @@
 #include "EnvOperation.h"
-#include "VariableBindingSingletone.h"
+#include "state/VariableBindingSingletone.h"
 #include <QTextStream>
 
 stamp::EnvOperation::EnvOperation()
@@ -25,5 +25,5 @@ QStringList::size_type stamp::EnvOperation::minimumArgumentCount() const
 
 QString stamp::EnvOperation::usageString() const
 {
-    return "stamp env";
+    return "env";
 }
