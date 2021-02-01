@@ -9,23 +9,30 @@
 
 namespace stamp {
 
-  class OperationBindingSingletone {
-  public:
+class OperationBindingSingletone {
+public:
     typedef QMap<QString, Operation*> Operations;
-  public:
-    enum Argument { ActionIndex, ArgumentSize };
-  public:
-    static OperationBindingSingletone& getInstance();    
-  public:
-    Operation* operation(const QString& operationName);      
+
+public:
+    enum Argument { ActionIndex,
+        ArgumentSize };
+
+public:
+    static OperationBindingSingletone& getInstance();
+
+public:
+    Operation* operation(const QString& operationName);
     void executeScript(const QStringList& script);
-  private:
+
+private:
     OperationBindingSingletone();
     ~OperationBindingSingletone();
-  private:
+
+private:
     Operations mOperations;
-  private:
+
+private:
     static const QString DEFAULT_OPERATION;
-  };
+};
 }
 #endif // STAMP_OPERATION_BINDING_SINGLETONE_H

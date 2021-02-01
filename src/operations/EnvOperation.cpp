@@ -1,13 +1,13 @@
 #include "EnvOperation.h"
-#include <QTextStream>
 #include "VariableBindingSingletone.h"
+#include <QTextStream>
 
 stamp::EnvOperation::EnvOperation()
 {
     //
 }
 
-void stamp::EnvOperation::execute(const QStringList &)
+void stamp::EnvOperation::execute(const QStringList&)
 {
     stamp::VariableBindingSingletone& binding = stamp::VariableBindingSingletone::getInstance();
 

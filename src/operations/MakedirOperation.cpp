@@ -5,23 +5,27 @@
 #include <QDir>
 
 stamp::MakedirOperation::MakedirOperation()
-: Operation() {
-  //
+    : Operation()
+{
+    //
 }
 
-void stamp::MakedirOperation::execute(const QStringList& arguments) {
+void stamp::MakedirOperation::execute(const QStringList& arguments)
+{
 
-  QString pathForCreation = arguments.at(CreateDirPathIndex);
+    QString pathForCreation = arguments.at(CreateDirPathIndex);
 
-  // QDir() is current directory i.e. "./"
-  bool isExist = QDir().mkpath(pathForCreation);
-  Q_UNUSED(isExist);
+    // QDir() is current directory i.e. "./"
+    bool isExist = QDir().mkpath(pathForCreation);
+    Q_UNUSED(isExist);
 }
 
-QStringList::size_type stamp::MakedirOperation::minimumArgumentCount() const {
-  return ArgumentSize;
+QStringList::size_type stamp::MakedirOperation::minimumArgumentCount() const
+{
+    return ArgumentSize;
 }
 
-QString stamp::MakedirOperation::usageString() const {
-  return "Example: makedir some/new/dir";
+QString stamp::MakedirOperation::usageString() const
+{
+    return "Example: makedir some/new/dir";
 }

@@ -10,8 +10,10 @@ public:
         InitDirPathIndex, // init project in this path
         ArgumentSize
     };
+
 public:
     InitProjectOperation();
+
 public:
     void execute(const QStringList& arguments) override;
     QStringList::size_type minimumArgumentCount() const override;

@@ -7,27 +7,31 @@
 #include "VariableBindingSingletone.h"
 
 stamp::ExtractOperation::ExtractOperation()
-: Operation() {
-  //
+    : Operation()
+{
+    //
 }
 
-void stamp::ExtractOperation::execute(const QStringList& arguments) {
+void stamp::ExtractOperation::execute(const QStringList& arguments)
+{
 
-  const QString& resourceFilePath = arguments.at(ResourceFilePathIndex);
-  const QString& saveFilePath = arguments.at(SaveFilePathIndex);  
+    const QString& resourceFilePath = arguments.at(ResourceFilePathIndex);
+    const QString& saveFilePath = arguments.at(SaveFilePathIndex);
 
-  QString fileAsString = io::getFileAsString(resourceFilePath);
+    QString fileAsString = io::getFileAsString(resourceFilePath);
 
-  stamp::VariableBindingSingletone& binding = stamp::VariableBindingSingletone::getInstance();
-  binding.replaceVariablesIn(fileAsString);  
+    stamp::VariableBindingSingletone& binding = stamp::VariableBindingSingletone::getInstance();
+    binding.replaceVariablesIn(fileAsString);
 
-  io::saveStringAsFile(fileAsString, saveFilePath);
+    io::saveStringAsFile(fileAsString, saveFilePath);
 }
 
-QStringList::size_type stamp::ExtractOperation::minimumArgumentCount() const {
-  return ArgumentSize;
+QStringList::size_type stamp::ExtractOperation::minimumArgumentCount() const
+{
+    return ArgumentSize;
 }
 
-QString stamp::ExtractOperation::usageString() const {
-  return "Example: extract %{stampTemplatesPath}/resource/file/path/file.txt some/destination/dir";
+QString stamp::ExtractOperation::usageString() const
+{
+    return "Example: extract %{stampTemplatesPath}/resource/file/path/file.txt some/destination/dir";
 }

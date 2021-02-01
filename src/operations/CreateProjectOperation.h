@@ -2,32 +2,34 @@
 #define STAMP_CREATE_PROJECT_OPERATION_H
 
 // self
-#include "VariableBindingSingletone.h"
 #include "Operation.h"
+#include "VariableBindingSingletone.h"
 
 // qt
-#include <QString>
 #include <QMap>
+#include <QString>
 
 namespace stamp {
 
-  class CreateProjectOperation : public Operation {
-  public:
-
-    enum Argument { 
-      ModuleTypeIndex,  // module position
-      ProjectNameIndex, // project name position
-      ArgumentSize
+class CreateProjectOperation : public Operation {
+public:
+    enum Argument {
+        TemplateNameIndex, // name of template folder to use
+        TargetPathIndex, // where to copy processed template
+        ArgumentSize
     };
-  public:
+
+public:
     CreateProjectOperation();
-  public:
+
+public:
     virtual void execute(const QStringList& arguments);
     virtual QStringList::size_type minimumArgumentCount() const;
     virtual QString usageString() const;
-  private:
-    void processNamedArguments(const stamp::ArgumentPairList& namedArguments);    
-  };
+
+private:
+    void processNamedArguments(const stamp::ArgumentPairList& namedArguments);
+};
 }
 
 #endif // STAMP_CREATE_PROJECT_OPERATION_H

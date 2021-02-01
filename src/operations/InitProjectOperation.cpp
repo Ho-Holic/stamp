@@ -6,7 +6,7 @@ stamp::InitProjectOperation::InitProjectOperation()
     //
 }
 
-void stamp::InitProjectOperation::execute(const QStringList &arguments)
+void stamp::InitProjectOperation::execute(const QStringList& arguments)
 {
     const QString& initPath = arguments.at(InitDirPathIndex);
     QDir().mkpath(initPath + "/.stamp/templates/");

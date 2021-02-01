@@ -8,23 +8,27 @@
 #include <QTextStream>
 
 stamp::SystemOperation::SystemOperation()
-: Operation() {
-  //
+    : Operation()
+{
+    //
 }
 
-void stamp::SystemOperation::execute(const QStringList& arguments) {
+void stamp::SystemOperation::execute(const QStringList& arguments)
+{
 
-  int returnCode = QProcess::execute(arguments.join(' '));
-  if (returnCode != 0) {
-    QTextStream out(stdout);
-    out << QString("Program exits with return code ") << returnCode << Qt::endl;
-  }
+    int returnCode = QProcess::execute(arguments.join(' '));
+    if (returnCode != 0) {
+        QTextStream out(stdout);
+        out << QString("Program exits with return code ") << returnCode << Qt::endl;
+    }
 }
 
-QStringList::size_type stamp::SystemOperation::minimumArgumentCount() const {
-  return ArgumentSize;
+QStringList::size_type stamp::SystemOperation::minimumArgumentCount() const
+{
+    return ArgumentSize;
 }
 
-QString stamp::SystemOperation::usageString() const {
-  return "Example: system [svn add ./]";
+QString stamp::SystemOperation::usageString() const
+{
+    return "Example: system [svn add ./]";
 }

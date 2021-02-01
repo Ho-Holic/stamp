@@ -8,24 +8,24 @@
 
 namespace stamp {
 
-  class VariableBindingSingletone {
-  public:
+class VariableBindingSingletone {
+public:
     typedef QMap<QString, QString> Variables;
 
-  public:
+public:
     static VariableBindingSingletone& getInstance();
 
-  private:
+private:
     VariableBindingSingletone();
 
-  public:
+public:
     void replaceVariablesIn(QStringList& source) const;
     void replaceVariablesIn(QString& source) const;
     void set(const QString& key, const QString& value);
     const Variables& variables() const;
 
-  private:
+private:
     Variables mVariables;
-  };
+};
 }
 #endif // STAMP_VARIABLE_BINDING_H

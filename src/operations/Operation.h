@@ -2,31 +2,33 @@
 #define STAMP_OPERATION_H
 
 // qt
-#include <QStringList>
 #include <QPair>
+#include <QStringList>
 
 namespace stamp {
 
+typedef QPair<QString, QString> ArgumentPair;
+typedef QList<ArgumentPair> ArgumentPairList;
 
-  typedef QPair<QString,QString> ArgumentPair;
-  typedef QList<ArgumentPair> ArgumentPairList;
-
-  class Operation {
-  private:
+class Operation {
+private:
     Q_DISABLE_COPY(Operation)
-  public:
+public:
     Operation();
     virtual ~Operation();
-  public:
+
+public:
     void tryExecute(const QStringList& arguments);
+
 public:
     virtual void execute(const QStringList& arguments) = 0;
     virtual QStringList::size_type minimumArgumentCount() const = 0;
     virtual QString usageString() const = 0;
-  public:
+
+public:
     static QStringList escapeSplit(const QString& argString);
     static void splitArguments(const QStringList& arguments, ArgumentPairList& named, QStringList& noname);
-  };  
+};
 
 }
 #endif // STAMP_OPERATION_H

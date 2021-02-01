@@ -5,20 +5,24 @@
 #include <QTextStream>
 
 stamp::SkipOperation::SkipOperation()
-: Operation() {
-  //
+    : Operation()
+{
+    //
 }
 
-void stamp::SkipOperation::execute(const QStringList& arguments) {
-  Q_UNUSED(arguments);
-  QTextStream out(stdout);
-  out << QString("Operation skipped") << Qt::endl;
+void stamp::SkipOperation::execute(const QStringList& arguments)
+{
+    Q_UNUSED(arguments);
+    QTextStream out(stdout);
+    out << QString("Operation skipped") << Qt::endl;
 }
 
-QStringList::size_type stamp::SkipOperation::minimumArgumentCount() const {
-  return 0;
+QStringList::size_type stamp::SkipOperation::minimumArgumentCount() const
+{
+    return 0;
 }
 
-QString stamp::SkipOperation::usageString() const {
-  return "Example: skip";
+QString stamp::SkipOperation::usageString() const
+{
+    return "Example: skip";
 }
