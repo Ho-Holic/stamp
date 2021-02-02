@@ -8,7 +8,9 @@
 #include "operations/SystemOperation.h"
 #include <QTextStream>
 
-const QString stamp::OperationBindingSingletone::DEFAULT_OPERATION = "skip";
+namespace {
+const QString DEFAULT_OPERATION = "skip";
+}
 
 stamp::OperationBindingSingletone& stamp::operationBinding()
 {
@@ -18,40 +20,30 @@ stamp::OperationBindingSingletone& stamp::operationBinding()
 
 stamp::Operation* stamp::OperationBindingSingletone::operation(const QString& operationName)
 {
+    auto it = m_operations.find(operationName);
 
-    Operations::Iterator it = mOperations.find(operationName);
-
-    Q_ASSERT_X(mOperations.contains(DEFAULT_OPERATION), __FUNCTION__,
+    Q_ASSERT_X(m_operations.find(DEFAULT_OPERATION) != m_operations.end(), __FUNCTION__,
         "Default operation must be in container");
 
-    return (it != mOperations.end()) ? it.value() : mOperations[DEFAULT_OPERATION];
+    return (it != m_operations.end()) ? it->second.get() : m_operations[DEFAULT_OPERATION].get();
 }
 
 stamp::OperationBindingSingletone::OperationBindingSingletone()
-    : mOperations()
 {
-    mOperations.insert("create", new stamp::CreateProjectOperation());
-    mOperations.insert("skip", new stamp::SkipOperation());
-    mOperations.insert("extract", new stamp::ExtractOperation());
-    mOperations.insert("makedir", new stamp::MakedirOperation());
-    mOperations.insert("system", new stamp::SystemOperation());
-    mOperations.insert("init", new stamp::InitProjectOperation());
-    mOperations.insert("env", new stamp::EnvOperation());
+    m_operations = {
+        { "create", std::make_shared<stamp::CreateProjectOperation>() },
+        { "skip", std::make_shared<stamp::SkipOperation>() },
+        { "extract", std::make_shared<stamp::ExtractOperation>() },
+        { "makedir", std::make_shared<stamp::MakedirOperation>() },
+        { "system", std::make_shared<stamp::SystemOperation>() },
+        { "init", std::make_shared<stamp::InitProjectOperation>() },
+        { "env", std::make_shared<stamp::EnvOperation>() },
+    };
 }
 
-stamp::OperationBindingSingletone::~OperationBindingSingletone()
-{
-    for (Operations::Iterator it = mOperations.begin(); it != mOperations.end(); ++it) {
-        stamp::Operation* operation = (*it);
-        delete operation;
-        *it = nullptr;
-    }
-    mOperations.clear();
-}
-
-// TODO: replace recursion with queue
 void stamp::OperationBindingSingletone::executeScript(const QStringList& script)
 {
+    // TODO: replace recursion with queue
 
     QTextStream out(stdout);
 

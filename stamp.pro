@@ -2,7 +2,7 @@ VERSION = 1.1.0
 
 TARGET = stamp
 
-CONFIG += qt
+CONFIG += qt c++17
 
 QT += core
 
