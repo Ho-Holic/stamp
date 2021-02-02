@@ -9,11 +9,9 @@ stamp::EnvOperation::EnvOperation()
 
 void stamp::EnvOperation::execute(const QStringList&)
 {
-    stamp::VariableBindingSingletone& binding = stamp::VariableBindingSingletone::getInstance();
-
     QTextStream out(stdout);
 
-    for (const auto& pair : binding.variables().toStdMap()) {
+    for (const auto& pair : stamp::variableBindings().variables().toStdMap()) {
         out << QString("    %1 = %2").arg(pair.first).arg(pair.second) << Qt::endl;
     }
 }

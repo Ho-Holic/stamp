@@ -10,7 +10,7 @@
 
 const QString stamp::OperationBindingSingletone::DEFAULT_OPERATION = "skip";
 
-stamp::OperationBindingSingletone& stamp::OperationBindingSingletone::getInstance()
+stamp::OperationBindingSingletone& stamp::operationBinding()
 {
     static OperationBindingSingletone instance;
     return instance;

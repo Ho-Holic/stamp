@@ -19,8 +19,7 @@ void stamp::ExtractOperation::execute(const QStringList& arguments)
 
     QString fileAsString = io::getFileAsString(resourceFilePath);
 
-    stamp::VariableBindingSingletone& binding = stamp::VariableBindingSingletone::getInstance();
-    binding.replaceVariablesIn(fileAsString);
+    stamp::variableBindings().replaceVariablesIn(fileAsString);
 
     io::saveStringAsFile(fileAsString, saveFilePath);
 }

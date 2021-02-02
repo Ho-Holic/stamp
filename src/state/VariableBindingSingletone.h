@@ -11,9 +11,6 @@ public:
     typedef QMap<QString, QString> Variables;
 
 public:
-    static VariableBindingSingletone& getInstance();
-
-private:
     VariableBindingSingletone();
 
 public:
@@ -25,4 +22,7 @@ public:
 private:
     Variables mVariables;
 };
+
+VariableBindingSingletone& variableBindings();
+
 }

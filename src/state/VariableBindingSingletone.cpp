@@ -1,6 +1,6 @@
 #include "VariableBindingSingletone.h"
 
-stamp::VariableBindingSingletone& stamp::VariableBindingSingletone::getInstance()
+stamp::VariableBindingSingletone& stamp::variableBindings()
 {
     static VariableBindingSingletone instance;
     return instance;

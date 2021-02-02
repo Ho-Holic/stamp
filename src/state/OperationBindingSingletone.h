@@ -14,15 +14,10 @@ public:
         ArgumentSize };
 
 public:
-    static OperationBindingSingletone& getInstance();
-
-public:
-    Operation* operation(const QString& operationName);
-    void executeScript(const QStringList& script);
-
-private:
     OperationBindingSingletone();
     ~OperationBindingSingletone();
+    Operation* operation(const QString& operationName);
+    void executeScript(const QStringList& script);
 
 private:
     Operations mOperations;
@@ -30,4 +25,7 @@ private:
 private:
     static const QString DEFAULT_OPERATION;
 };
+
+OperationBindingSingletone& operationBinding();
+
 }

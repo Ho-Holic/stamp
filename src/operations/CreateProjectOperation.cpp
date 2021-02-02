@@ -37,7 +37,7 @@ void stamp::CreateProjectOperation::execute(const QStringList& arguments)
     //
     // TODO: add context id, to remove variables from binding after operations is done
     //
-    stamp::VariableBindingSingletone& binding = stamp::VariableBindingSingletone::getInstance();
+    stamp::VariableBindingSingletone& binding = stamp::variableBindings();
     binding.set("%{templateName}", templateName);
     binding.set("%{targetPath}", targetPath);
     binding.set("%{targetName}", targetName);
@@ -54,7 +54,7 @@ void stamp::CreateProjectOperation::execute(const QStringList& arguments)
     QTextStream out(stdout);
     out << "using template " << scriptPath << Qt::endl;
 
-    stamp::OperationBindingSingletone::getInstance().executeScript(script);
+    stamp::operationBinding().executeScript(script);
 }
 
 QStringList::size_type stamp::CreateProjectOperation::minimumArgumentCount() const
