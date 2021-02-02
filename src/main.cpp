@@ -1,5 +1,3 @@
-
-// qt
 #include "state/OperationBindingSingletone.h"
 #include "state/VariableBindingSingletone.h"
 #include <QCoreApplication>

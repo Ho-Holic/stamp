@@ -1,7 +1,5 @@
-#ifndef STAMP_VARIABLE_BINDING_H
-#define STAMP_VARIABLE_BINDING_H
+#pragma once
 
-// qt
 #include <QMap>
 #include <QString>
 #include <QStringList>
@@ -28,4 +26,3 @@ private:
     Variables mVariables;
 };
 }
-#endif // STAMP_VARIABLE_BINDING_H

@@ -1,5 +1,4 @@
-#ifndef STAMP_MAKEDIR_OPERATION_H
-#define STAMP_MAKEDIR_OPERATION_H
+#pragma once
 
 #include "Operation.h"
 
@@ -21,5 +20,3 @@ public:
     virtual QString usageString() const;
 };
 }
-
-#endif // STAMP_MAKEDIR_OPERATION_H

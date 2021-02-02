@@ -1,4 +1,3 @@
-// self
 #include "VariableBindingSingletone.h"
 
 stamp::VariableBindingSingletone& stamp::VariableBindingSingletone::getInstance()

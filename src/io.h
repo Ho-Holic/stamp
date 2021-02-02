@@ -1,16 +1,11 @@
-#ifndef STAMP_IO_IO_HPP
-#define STAMP_IO_IO_HPP
+#pragma once
 
-// qt
 #include <QDir>
 #include <QFile>
 #include <QFileInfo>
 #include <QString>
 #include <QStringList>
 #include <QTextStream>
-
-// tmp
-#include <QDebug>
 
 namespace io {
 
@@ -119,5 +114,3 @@ inline int findCommentPosition(const QString& commentSymbol, const QString& line
     return line.length();
 }
 }
-
-#endif // STAMP_IO_IO_HPP

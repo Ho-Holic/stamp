@@ -1,7 +1,4 @@
-// self
 #include "SkipOperation.h"
-
-// arch
 #include <QTextStream>
 
 stamp::SkipOperation::SkipOperation()

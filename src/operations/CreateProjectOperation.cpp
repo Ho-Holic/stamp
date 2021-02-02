@@ -1,16 +1,10 @@
-// self
 #include "CreateProjectOperation.h"
 #include "io.h"
 #include "state/OperationBindingSingletone.h"
 #include "state/VariableBindingSingletone.h"
-
-// qt
 #include <QDate>
 #include <QDir>
 #include <QTime>
-
-// tmp
-#include <QDebug>
 
 stamp::CreateProjectOperation::CreateProjectOperation()
     : Operation()
@@ -40,16 +34,13 @@ void stamp::CreateProjectOperation::execute(const QStringList& arguments)
     if (targetPath.isEmpty())
         targetPath = currentDir.path(); // current dir
 
-    QString upperCaseTemplatePath = targetPath.toUpper();
-
     //
     // TODO: add context id, to remove variables from binding after operations is done
     //
     stamp::VariableBindingSingletone& binding = stamp::VariableBindingSingletone::getInstance();
     binding.set("%{templateName}", templateName);
-    binding.set("%{targetName}", targetName);
     binding.set("%{targetPath}", targetPath);
-    binding.set("%{upperCaseTemplatePath}", upperCaseTemplatePath);
+    binding.set("%{targetName}", targetName);
 
     // insert named arguments
     processNamedArguments(namedArguments);
@@ -79,6 +70,5 @@ QString stamp::CreateProjectOperation::usageString() const
 
 void stamp::CreateProjectOperation::processNamedArguments(const stamp::ArgumentPairList& namedArguments)
 {
-    //
     Q_UNUSED(namedArguments);
 }

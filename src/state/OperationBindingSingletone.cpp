@@ -1,7 +1,4 @@
-// self
 #include "OperationBindingSingletone.h"
-
-// operations
 #include "operations/CreateProjectOperation.h"
 #include "operations/EnvOperation.h"
 #include "operations/ExtractOperation.h"
@@ -9,7 +6,6 @@
 #include "operations/MakedirOperation.h"
 #include "operations/SkipOperation.h"
 #include "operations/SystemOperation.h"
-
 #include <QTextStream>
 
 const QString stamp::OperationBindingSingletone::DEFAULT_OPERATION = "skip";

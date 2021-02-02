@@ -1,5 +1,4 @@
-#ifndef STAMP_SYSTEM_OPERATION_H
-#define STAMP_SYSTEM_OPERATION_H
+#pragma once
 
 #include "Operation.h"
 
@@ -19,4 +18,3 @@ public:
     virtual QString usageString() const;
 };
 }
-#endif // STAMP_SYSTEM_OPERATION_H

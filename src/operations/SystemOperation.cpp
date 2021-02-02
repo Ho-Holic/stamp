@@ -1,11 +1,7 @@
 #include "SystemOperation.h"
-
-// stl
-#include <limits>
-
-// qt
 #include <QProcess>
 #include <QTextStream>
+#include <limits>
 
 stamp::SystemOperation::SystemOperation()
     : Operation()

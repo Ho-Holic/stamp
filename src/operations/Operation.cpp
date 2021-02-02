@@ -1,7 +1,4 @@
-// self
 #include "Operation.h"
-
-// arch
 #include <QTextStream>
 
 stamp::Operation::Operation()

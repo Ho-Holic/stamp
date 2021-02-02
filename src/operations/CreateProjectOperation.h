@@ -1,11 +1,7 @@
-#ifndef STAMP_CREATE_PROJECT_OPERATION_H
-#define STAMP_CREATE_PROJECT_OPERATION_H
+#pragma once
 
-// self
 #include "Operation.h"
 #include "state/VariableBindingSingletone.h"
-
-// qt
 #include <QMap>
 #include <QString>
 
@@ -31,5 +27,3 @@ private:
     void processNamedArguments(const stamp::ArgumentPairList& namedArguments);
 };
 }
-
-#endif // STAMP_CREATE_PROJECT_OPERATION_H

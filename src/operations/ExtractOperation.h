@@ -1,7 +1,5 @@
-#ifndef STAMP_EXTRACT_OPERATION_H
-#define STAMP_EXTRACT_OPERATION_H
+#pragma once
 
-// self
 #include "Operation.h"
 
 namespace stamp {
@@ -23,5 +21,3 @@ public:
     virtual QString usageString() const;
 };
 }
-
-#endif // STAMP_EXTRACT_OPERATION_H

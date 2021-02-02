@@ -1,7 +1,4 @@
-// self
 #include "MakedirOperation.h"
-
-// qt
 #include <QDir>
 
 stamp::MakedirOperation::MakedirOperation()

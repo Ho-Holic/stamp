@@ -1,11 +1,7 @@
-#ifndef STAMP_OPERATION_BINDING_SINGLETONE_H
-#define STAMP_OPERATION_BINDING_SINGLETONE_H
+#pragma once
 
-// qt
-#include <QMap>
-
-// self
 #include "operations/Operation.h"
+#include <QMap>
 
 namespace stamp {
 
@@ -35,4 +31,3 @@ private:
     static const QString DEFAULT_OPERATION;
 };
 }
-#endif // STAMP_OPERATION_BINDING_SINGLETONE_H

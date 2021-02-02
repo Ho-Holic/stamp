@@ -1,4 +1,3 @@
-// self
 #include "ExtractOperation.h"
 #include "io.h"
 

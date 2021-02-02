@@ -1,7 +1,5 @@
-#ifndef STAMP_OPERATION_H
-#define STAMP_OPERATION_H
+#pragma once
 
-// qt
 #include <QPair>
 #include <QStringList>
 
@@ -31,4 +29,3 @@ public:
 };
 
 }
-#endif // STAMP_OPERATION_H

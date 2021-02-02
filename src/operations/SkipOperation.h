@@ -1,7 +1,5 @@
-#ifndef STAMP_SKIP_OPERATION_H
-#define STAMP_SKIP_OPERATION_H
+#pragma once
 
-// self
 #include "Operation.h"
 
 namespace stamp {
@@ -15,5 +13,3 @@ public:
 };
 
 }
-
-#endif // STAMP_SKIP_OPERATION_H
