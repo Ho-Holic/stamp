@@ -80,37 +80,22 @@ inline QStringList splitStringToList(const QString& string)
     return result;
 }
 
-inline int findCommentPosition(const QString& commentSymbol, const QString& line)
+inline QStringList getDirList(const QString& path)
 {
+    QStringList result;
 
-    const QChar QUOTE = '"';
+    QDir dir(path);
+    dir.setFilter(QDir::Dirs | QDir::NoDotAndDotDot);
 
-    enum State { Search,
-        Skip };
-    State state = Search;
+    QFileInfoList list = dir.entryInfoList();
 
-    for (int i = 0; i < line.size(); ++i) {
-        const QChar c = line.at(i);
+    for (int i = 0; i < list.size(); ++i) {
+        QFileInfo fileInfo = list.at(i);
 
-        switch (state) {
-
-        case Search:
-            if (c == QUOTE) {
-                state = Skip;
-                break;
-            }
-            if (line.mid(i, commentSymbol.size()) == commentSymbol) {
-                return i;
-            }
-            break;
-
-        case Skip:
-            if (c == QUOTE) {
-                state = Search;
-            }
-            break;
-        }
+        result << fileInfo.fileName();
     }
-    return line.length();
+
+    return result;
 }
+
 }

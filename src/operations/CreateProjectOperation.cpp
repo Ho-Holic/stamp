@@ -41,6 +41,7 @@ void stamp::CreateProjectOperation::execute(const QStringList& arguments)
     binding.set("%{templateName}", templateName);
     binding.set("%{targetPath}", targetPath);
     binding.set("%{targetName}", targetName);
+    binding.set("%{upperCaseTargetName}", targetName.toUpper());
 
     // insert named arguments
     processNamedArguments(namedArguments);
@@ -64,8 +65,12 @@ QStringList::size_type stamp::CreateProjectOperation::minimumArgumentCount() con
 
 QString stamp::CreateProjectOperation::usageString() const
 {
-    // TODO: show all available create operations by scanning project folder
-    return "create [module, ...] MyCustomName";
+    QString templatePath = "%{templates}";
+    stamp::variableBindings().replaceVariablesIn(templatePath);
+
+    auto templateNames = io::getDirList(templatePath);
+
+    return QString("create templateName MyCustomName\nAvailable Templates:\n    - %1").arg(templateNames.join("\n    - "));
 }
 
 void stamp::CreateProjectOperation::processNamedArguments(const stamp::ArgumentPairList& namedArguments)
